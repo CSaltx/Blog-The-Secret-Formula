@@ -35,12 +35,21 @@ export default function App() {
   return (
     <div className="App">
       <header>
-        Blog
-        {user && <button onClick={() => setWriting(true)}>New Article</button>}
+        <div className="logo">
+          <i className="fa-solid fa-scroll fa-lg">The Secret Formula</i>
+        </div>
+        <div className="add">
+          {user && (
+            <button id="button" onClick={() => setWriting(true)}>
+              Add New Article
+            </button>
+          )}
+        </div>
         {!user ? <SignIn /> : <SignOut />}
       </header>
-
-      {!user ? "" : <Nav articles={articles} setArticle={setArticle} />}
+      <div className="cards">
+        {<Nav articles={articles} setArticle={setArticle} />}
+      </div>
 
       {!user ? (
         ""

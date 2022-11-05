@@ -1,24 +1,108 @@
+:root {
+  --primary-color: #2f2fa2;
+  --secondary-color: #ffffff;
+  --tertiary-color: #f64c72;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
 .App {
   display: grid;
   grid-template-rows: min-content auto;
   grid-template-columns: 250px auto;
   height: 100vh;
   overflow: scroll;
+  background-color: var(--primary-color);
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  color: var(--tertiary-color);
+  font-size: 1vw;
+  gap: 4em;
+  margin: 2vh;
+}
+
+:not(header) > .App {
+  background-color: white;
+}
+
+.articles {
+  background-color: white;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.title,
+.body {
+  margin-top: 0;
+  color: black;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 1rem;
+}
+
+.card-area {
+  width: 100%;
+  display: grid;
+}
+
+.card {
+  width: 80%;
+  justify-self: center;
+  background-color: white;
+  color: black;
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 header {
+  width: 100%;
+  height: 8vh;
+  background-color: var(--primary-color);
   display: flex;
-  justify-content: space-between;
-  background-color: black;
-  color: white;
-  grid-column: 1 / span 2;
-  padding: 10px 5px;
+  gap: 1vw;
+  justify-content: flex-end;
+  padding-top: 1em;
+  grid-column: 1/-1;
+}
+
+button {
+  border-radius: 0.347vw;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 800;
+  cursor: pointer;
+  width: 8vw;
+  height: 5vh;
+}
+
+.add {
+  margin-right: 5vh;
 }
 
 form {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+#button:hover {
+  border-radius: 15px;
+  color: var(--secondary-color);
+  transition: 0.2s ease-in;
+}
+
+form h1 {
   align-items: flex-start;
 }
 
@@ -38,9 +122,29 @@ nav {
   background-color: #dee9ff;
 }
 
+.log-in {
+  border-image-source: linear-gradient(45deg, #f64c72, #df6c4f);
+  background-image: linear-gradient(45deg, #f64c72, #df6c4f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-width: 0.2rem;
+  border-image-slice: 1;
+  margin-right: 2em;
+}
+
 nav p:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+#button {
+  color: var(--secondary-color);
+  font-size: minmax(0.5em, 0.75em);
+  background-image: linear-gradient(45deg, #f64c72, #df6c4f);
+  width: 15vw;
+  border: 0px;
+  border-radius: 0.05em;
 }
 
 article .date {
@@ -55,4 +159,21 @@ article .body {
   background-color: red;
   color: gold;
   padding: 5px;
+}
+
+.card {
+  margin-bottom: 2vh;
+}
+
+@media screen and (max-width: 550px) {
+  header {
+    justify-content: center;
+  }
+
+  button {
+    font-size: 0.5rem;
+    width: fit-content;
+    height: 5vh;
+    margin: 0vh;
+  }
 }
