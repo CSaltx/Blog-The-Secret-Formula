@@ -16,12 +16,14 @@ export default function ArticleEntry({ addArticle }) {
   }
 
   return (
-    <div>
+    <div className="blog-form">
+      <h1 className="heading">The Secret Formula</h1>
+      <h3 className="subtitle">Tell us your story</h3>
       <form onSubmit={submit}>
         {error && <p className="error">{error}</p>}
         <h1 className="title">Title</h1>
         <input value={title} onChange={(e) => setTitle(e.target.value)} />
-        <h1 className="body">Body</h1>
+        <h1 className="body-content">Body</h1>
         <textarea
           rows="8"
           value={body}

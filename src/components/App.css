@@ -1,9 +1,12 @@
+@font-face {
+  font-family: Cunia;
+  src: url("../Cunia.ttf");
+}
+
 :root {
   --primary-color: #2f2fa2;
   --secondary-color: #ffffff;
   --tertiary-color: #f64c72;
-  scroll-behavior: smooth;
-  overflow: hidden;
 }
 
 .App {
@@ -11,8 +14,20 @@
   grid-template-rows: min-content auto;
   grid-template-columns: 250px auto;
   height: 100vh;
-  overflow: scroll;
   background-color: var(--primary-color);
+  scroll-behavior: smooth;
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+.name {
+  margin-left: 3vh;
+  font-family: "Cunia";
+  font-size: 2vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo {
@@ -22,7 +37,36 @@
   color: var(--tertiary-color);
   font-size: 1vw;
   gap: 4em;
-  margin: 2vh;
+  margin: 2.5vh;
+}
+
+.blog-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  border-radius: 20px;
+  height: 100vh;
+  justify-self: center;
+  background-color: white;
+  color: black;
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  gap: 0;
+}
+
+.heading {
+  color: var(--tertiary-color);
+  margin: 0;
+  height: fit-content;
+  padding: 0;
+}
+
+.subtitle {
+  display: grid;
+  justify-content: center;
+  margin-bottom: 2vh;
 }
 
 :not(header) > .App {
@@ -48,6 +92,8 @@
 .card-area {
   width: 100%;
   display: grid;
+  background-size: url("../blue-asbtract-bg.jpg");
+  background-size: cover;
 }
 
 .card {
@@ -90,10 +136,28 @@ button {
 }
 
 form {
-  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.body {
+  text-transform: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 2vh;
+  opacity: 50%;
+}
+
+.title-content {
+  font-weight: 400;
+  font-size: 3vh;
+}
+
+.article-selection {
+  display: grid;
+  justify-content: center;
 }
 
 #button:hover {
@@ -102,24 +166,60 @@ form {
   transition: 0.2s ease-in;
 }
 
-form h1 {
-  align-items: flex-start;
+.title,
+.body-content {
+  margin-right: auto;
+  margin-bottom: 0;
+  font-size: 1.5vh;
+  text-transform: uppercase;
+  color: grey;
+  opacity: 70%;
+  font-weight: 400;
 }
 
 form input,
 form textarea {
-  margin-bottom: 10px;
-  width: 300px;
+  margin-bottom: 20px;
+  width: 30vw;
+  border-bottom-style: groove;
+  border-width: 0 0 2px;
+  border-color: grey;
+  opacity: 50%;
+  margin-top: 1vh;
+}
+
+form button {
+  border: 0;
+  background-color: var(--tertiary-color);
+  color: white;
+}
+
+form textarea {
+  max-height: 200px;
+  height: auto;
+  resize: none;
+  overflow: auto;
+}
+
+form input:focus,
+form textarea:focus {
+  opacity: 100%;
+  border-image-source: linear-gradient(45deg, #f64c72, #df6c4f);
+  background-image: linear-gradient(45deg, #f64c72, #df6c4f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image-slice: 1;
+  outline: 0;
 }
 
 nav,
 article {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
   height: 100%;
   padding: 10px;
-}
-
-nav {
-  background-color: #dee9ff;
 }
 
 .log-in {
@@ -159,6 +259,25 @@ article .body {
   background-color: red;
   color: gold;
   padding: 5px;
+}
+
+.nxt-pg-div {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+nav h1 {
+  color: var(--tertiary-color);
+}
+
+.next-page {
+  width: fit-content;
+  align-self: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+  border: 0;
 }
 
 .card {

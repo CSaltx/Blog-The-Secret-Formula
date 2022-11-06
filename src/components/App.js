@@ -36,7 +36,9 @@ export default function App() {
     <div className="App">
       <header>
         <div className="logo">
-          <i className="fa-solid fa-scroll fa-lg">The Secret Formula</i>
+          <i className="fa-solid fa-scroll fa-lg">
+            <span className="name">The Secret Formula</span>
+          </i>
         </div>
         <div className="add">
           {user && (
@@ -49,8 +51,10 @@ export default function App() {
       </header>
       <div className="cards">
         {<Nav articles={articles} setArticle={setArticle} />}
+        {/* <button className="next-button">
+          <i className="fa-solid fa-arrow-right fa-lg"></i>
+        </button> */}
       </div>
-
       {!user ? (
         ""
       ) : writing ? (
