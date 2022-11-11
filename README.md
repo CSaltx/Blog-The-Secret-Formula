@@ -1,4 +1,4 @@
-## The Secret Formula
+## <a href="https://blog-f9172.web.app/">The Secret Formula</a>
 ### A fully-functional blog using Firebase
 
 <div align="center">
