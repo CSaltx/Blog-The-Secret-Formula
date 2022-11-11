@@ -32,9 +32,26 @@ export default function App() {
     });
   }
 
+  const displayNav = () => {
+    const nav = document.querySelector("nav.card");
+    const article = document.querySelector("article");
+    if (nav.style.display === "none") {
+      nav.style.display = "grid";
+      article.style.display = "none";
+      article.style.width = "0";
+    } else {
+      nav.style.display = "none";
+      article.style.display = "inline";
+      article.style.width = "100%";
+    }
+  };
+
   return (
     <div className="App">
       <header>
+        <button className="expand-button" onClick={displayNav}>
+          <i className="fa-solid fa-bars fa-inverse fa-2x"></i>
+        </button>
         <div className="logo">
           <i className="fa-solid fa-scroll fa-lg">
             <span className="name">The Secret Formula</span>
@@ -51,16 +68,24 @@ export default function App() {
       </header>
       <div className="cards">
         {<Nav articles={articles} setArticle={setArticle} />}
-        {/* <button className="next-button">
-          <i className="fa-solid fa-arrow-right fa-lg"></i>
-        </button> */}
       </div>
       {!user ? (
         ""
       ) : writing ? (
         <ArticleEntry addArticle={addArticle} />
       ) : (
-        <Article article={article} />
+        <Article article={article} setArticle={setArticle} />
+      )}
+
+      {user ? (
+        ""
+      ) : (
+        <div className="arrow-login">
+          <span className="arrow"></span>
+          <h5 className="login-msg">
+            Please login to see blog posts and write posts!
+          </h5>
+        </div>
       )}
     </div>
   );

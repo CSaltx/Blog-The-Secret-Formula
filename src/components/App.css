@@ -87,6 +87,7 @@
   color: black;
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   font-size: 1rem;
+  text-overflow: ellipsis;
 }
 
 .card-area {
@@ -280,19 +281,97 @@ nav h1 {
   border: 0;
 }
 
+.expand-button {
+  display: none;
+}
+
+body {
+  width: 100%;
+}
+
 .card {
   margin-bottom: 2vh;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 925px) {
   header {
-    justify-content: center;
+    display: flex;
+    height: fit-content;
+    justify-content: space-evenly;
+    padding-bottom: 0.5vh;
   }
 
   button {
     font-size: 0.5rem;
     width: fit-content;
+    height: fit-content;
+    text-overflow: ellipsis;
     height: 5vh;
+    padding: 0;
     margin: 0vh;
+  }
+
+  div.add {
+    flex-direction: column;
+    justify-self: center;
+    margin-top: 0;
+  }
+
+  .blog-form {
+    grid-column: 1/-1;
+  }
+
+  .expand-button {
+    display: inline;
+    width: fit-content;
+    height: 100%;
+    border: 0;
+    background-color: transparent;
+    margin-top: 1vh;
+  }
+
+  div.cards {
+    width: 0;
+  }
+
+  nav,
+  article {
+    grid-column: 1/-1;
+  }
+
+  .card > div {
+    width: 80%;
+  }
+
+  .card > div > .body {
+    text-overflow: ellipsis;
+  }
+
+  nav {
+    display: none;
+    width: 0;
+  }
+
+  .add > button {
+    height: fit-content;
+    padding: 1vh;
+  }
+
+  .card {
+    box-shadow: 0;
+    padding: 0;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .expand-button nav {
+    width: fit-content;
+    padding: 0;
+  }
+
+  .card {
+    text-align: center;
   }
 }
