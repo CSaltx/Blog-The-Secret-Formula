@@ -4,7 +4,11 @@ export default function Nav({ articles, setArticle }) {
       {!articles
         ? "Be the first to add an article"
         : articles.map((a) => (
-            <div key={a.id} onClick={() => setArticle(a)}>
+            <div
+              key={a.id}
+              className="nav-content"
+              onClick={() => setArticle(a)}
+            >
               <h1 className="title-content">{a.title}</h1>
               <p className="body">{a.body}</p>
             </div>

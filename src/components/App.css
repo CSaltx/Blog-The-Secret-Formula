@@ -18,6 +18,8 @@
   scroll-behavior: smooth;
   overflow: hidden;
   overflow-y: hidden;
+  background-image: url("../draft2.jpg");
+  background-size: cover;
 }
 
 .name {
@@ -93,8 +95,6 @@
 .card-area {
   width: 100%;
   display: grid;
-  background-size: url("../blue-asbtract-bg.jpg");
-  background-size: cover;
 }
 
 .card {
@@ -159,6 +159,7 @@ form {
 .article-selection {
   display: grid;
   justify-content: center;
+  color: white;
 }
 
 #button:hover {
@@ -298,6 +299,7 @@ body {
     display: flex;
     height: fit-content;
     justify-content: space-evenly;
+    padding-top: 0.5vh;
     padding-bottom: 0.5vh;
   }
 
@@ -369,6 +371,10 @@ body {
   .expand-button nav {
     width: fit-content;
     padding: 0;
+  }
+
+  .nav-content {
+    background-color: var(--secondary-color);
   }
 
   .card {

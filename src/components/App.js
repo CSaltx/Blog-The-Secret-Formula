@@ -37,6 +37,7 @@ export default function App() {
     const article = document.querySelector("article");
     if (nav.style.display === "none") {
       nav.style.display = "grid";
+      nav.style.backgroundColor = "white";
       article.style.display = "none";
       article.style.width = "0";
     } else {
